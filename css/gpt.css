@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+/* ===== Color Variables ===== */
+:root {
+    --fire-engine-red: #DA0229;
+    --dark-purple: #290A1C;
+    --golden-brown: #8B6A03;
+    --apple-green: #9EA219;
+    --dark-green: #142601;
+}
+
+/* ===== Global Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 0;
+    background: var(--dark-purple); /* Updated background */
+    color: white;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ===== HEADER STYLING ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: var(--dark-green); /* Matches the logo background */
+    color: var(--apple-green); /* Complements logo */
+    border-bottom: 3px solid var(--fire-engine-red);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 1000;
+    background-image: url('../images/KW_Logo_Header.png');
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+header.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Push content below header */
+main {
+    margin-top: 0;
+}
+
+/* ===== LOGO STYLING ===== */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 80px;
+    height: 70px;
+}
+
+/* ===== HEADER TITLE ===== */
+.header-title {
+    font-family: 'kepler-std','Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--apple-green);
+    white-space: nowrap;
+}
+
+/* ===== NAVBAR STYLING ===== */
+.navbar {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--golden-brown);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 10px 16px;
+    transition: all 0.3s ease-in-out;
+    display: block;
+    border-radius: 5px;
+}
+
+.navbar a:hover {
+    background-color: var(--fire-engine-red);
+    color: white;
+}
+
+.navbar a:active {
+    background-color: var(--golden-brown);
+}
+
+/* ===== INTRODUCTION TEXT ===== */
+.introduction {
+    text-align: center;
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+    font-weight: 500;
+    color: var(--apple-green);
+}
+
+/* ===== SECTION SPACING ===== */
+section {
+    padding: 140px 20px;
+}
+
+/* ===== SPLASH SCREEN STYLING ===== */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--dark-purple);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+    transition: opacity 1s ease-in-out;
+}
+
+.splash-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#enter-btn {
+    background: var(--fire-engine-red);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 2px solid var(--golden-brown);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+#enter-btn:hover {
+    background: var(--golden-brown);
+}
+
+/* Splash Screen Disappearing Effect */
+#splash-screen.hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* ===== SMOOTH FADE-IN FOR MAIN CONTENT ===== */
+#main-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#main-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== ABOUT ME SECTION ===== */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid var(--golden-brown);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Left Side: Text */
+.about-text {
+    flex: 1;
+    padding-right: 40px;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--apple-green);
+}
+
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--golden-brown);
+}
+
+/* Right Side: Image */
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid var(--fire-engine-red);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== ANIMATION (Follows Main Content) ===== */
+.about-container {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#main-content.visible .about-container {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px;
+    }
+
+    .about-text {
+        padding-right: 0;
+    }
+
+    .about-image img {
+        width: 200px;
+    }
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: var(--dark-green);
+    color: var(--golden-brown);
+    padding: 20px;
+    text-align: center;
+}
+
+/* Hide splash screen by default if the user has already visited */
+body.splash-hidden #splash-screen {
+    display: none;
+}
+
+/* Ensure main content remains hidden until JavaScript activates it */
+#main-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+#main-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
