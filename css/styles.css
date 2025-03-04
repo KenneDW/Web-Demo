@@ -1,0 +1,80 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw; /* Makes it span the entire width of the viewport */
+    height: 100px; /* Adjust height as needed */
+    background-color: #333; /* Example background color */
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px; /* Adds space inside the header */
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    background-image: url('../images/header-background.png');
+    gap: 20px;
+}
+
+body {
+    padding-top: 120px;
+    background-color: deepskyblue;
+}
+
+nav ul {
+    margin: 0;
+    padding: 5px 0 5px 30px;}
+
+nav li {
+    display: inline;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+
+}
+
+.logo img {
+    width: 75px;
+    height: 50px;
+}
+
+.header-title {
+    position: absolute;
+    top: 15px;
+    left: 100px;
+    font-family: Impact, comic, sans-serif;
+    letter-spacing: 1px;
+    color: lightblue;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul {
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    display: inline;
+}
+.navbar a {
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+}
+
+.introduction {
+    justify-content: center;
+    text-align: center;
+}
